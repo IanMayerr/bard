@@ -1,8 +1,13 @@
+import BlocoOpcoes from "../../components/BlocoOpcoes/BlocoOpcoes"
+import Cabecalho from "./../../components/Cabecalho/Cabecalho"
 
 
 function Login(){
     return(
-        <>oioi</>
+        <>
+        <Cabecalho />
+        <BlocoOpcoes />
+        </>
     )
 }
 

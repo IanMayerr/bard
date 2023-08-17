@@ -8,7 +8,7 @@ export const ContainerFundo = styled.div`
     gap: 2vh;
     background-color: #2B2B2B;
     border-radius: 27px;
-    width: 95vw;
+    width: 90vw;
     height: 50vh;
     margin-top: 60px;
     margin-left: 8px;
@@ -21,7 +21,7 @@ export const ParteFuncional = styled.div`
     align-items: center;
     background-image: url(${fundoLogin});
     height: 50vh;
-    width: 50vh;
+    width: 100vw;
 `
 
 export const Fonte = styled.h1`
