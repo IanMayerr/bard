@@ -1,4 +1,4 @@
-import BlocoOpcoes from "../../components/BlocoOpcoes/BlocoOpcoes"
+import BlocoOpcoesLogin from "../../components/BlocoOpcoesLogin/BlocoOpcoesLogin"
 import Cabecalho from "./../../components/Cabecalho/Cabecalho"
 
 
@@ -6,7 +6,7 @@ function Login(){
     return(
         <>
         <Cabecalho />
-        <BlocoOpcoes />
+        <BlocoOpcoesLogin />
         </>
     )
 }

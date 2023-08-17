@@ -1,14 +1,17 @@
-import { Fundo } from "./CadastroG"
-import { MargemCima } from "./CadastroG"
+import BlocoOpcoesCadastro from "../../components/BlocoOpcoesCadastro/BlocoOpcoesCadastro.js"
+import { Fundo } from "./CadastroG.jsx"
+import { MargemCima } from "./CadastroG.jsx"
 
 
-function Cadastro(){
+function CadastroG(){
     return(
         <>
         <MargemCima />
-        <Fundo />
+        <Fundo>
+            <BlocoOpcoesCadastro />
+        </Fundo>
         </>
     )
 }
 
-export default Cadastro
+export default CadastroG
