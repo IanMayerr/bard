@@ -1,13 +1,9 @@
-import fundoLogin from "../../assets/fundoLogin.jpg"
-
 import { Button } from '@chakra-ui/react'
 import { Input } from '@chakra-ui/react'
 
 import iconGoogle from "../../assets/iconGoogle.png"
 import iconApple from "../../assets/iconApple.png"
-import { ParteFuncional } from "./BlocoOpcoes.jsx"
-import { ContainerFundo } from "./BlocoOpcoes.jsx"
-import { Fonte } from "./BlocoOpcoes.jsx"
+import { ContainerFundo, ParteFuncional, Fonte, Titulo, ContainerLinha } from './BlocoOpcoes.jsx'
 
 function BlocoOpcoes() {
     return (
@@ -15,16 +11,26 @@ function BlocoOpcoes() {
             <ParteFuncional>
                 <ContainerFundo>
 
-                    <Button colorScheme='facebook' leftIcon={<img src={iconGoogle} />}>
+                    <Titulo>Login
+                        <ContainerLinha />
+                    </Titulo>
+                    
+                       
+                    <Button h='8vh' w='80vw' background-color='white'  leftIcon={<img src={iconGoogle} />}>
                         Conectar com o Google
                     </Button>
-                    <Button colorScheme='twitter' leftIcon={<img src={iconApple} />}>
+
+                    <Button h='8vh' w='80vw' background-color='white' leftIcon={<img src={iconApple} />}>
                         Conectar com o Apple ID
                     </Button>
-                    <Fonte>Email:</Fonte>
-                    <Input placeholder='Basic usage' variant='solid' />
-                    <Fonte>Senha:</Fonte>
-                    <Input placeholder='Basic usage' variant='solid' />
+
+                    <Fonte>Email:
+                    <Input placeholder='Basic usage' variant='solid'/>
+                    </Fonte>
+
+                    <Fonte>Senha:
+                    <Input placeholder='Basic usage' variant='solid'/>
+                    </Fonte>
 
                     <Button colorScheme='blue'>Entrar</Button>
 
