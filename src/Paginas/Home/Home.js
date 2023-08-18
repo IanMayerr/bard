@@ -1,12 +1,12 @@
-import Cabecalho from "../../components/Cabecalho/Cabecalho"
-import BlocoOpcoes from '../../components/BlocoOpcoes/BlocoOpcoes'
+import CabecalhoHome from "../../components/CabecalhoHome/CabecalhoHome"
+import { Fundo } from "./Home.jsx"
+
 
 function Home() {
     return (
-        <>
-            <Cabecalho />
-            <BlocoOpcoes />
-        </>
+        <Fundo>
+            <CabecalhoHome />
+        </Fundo>
     )
 }
 
