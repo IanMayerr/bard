@@ -1,6 +1,6 @@
 import BlocoOpcoesCadastro from "../../components/BlocoOpcoesCadastro/BlocoOpcoesCadastro.js"
-import { Fundo } from "./CadastroG.jsx"
-import { MargemCima } from "./CadastroG.jsx"
+import { Fundo } from "./CadastroA.jsx"
+import { MargemCima } from "./CadastroA.jsx"
 
 
 function CadastroA(){
