@@ -1,7 +1,7 @@
 import { CabecalhoSuperior } from "./CabecalhoHome.jsx"
-import fotoPerfil from "../../assets/fotoPerfil.jpg"
-import logoBardExtended from "../../assets/logoBardExtended.jpg"
-import botaoPessoas from "../../assets/botaoPessoas.jpg"
+import fotoPerfil from "../../assets/fotoPerfil.svg"
+import logoBardExtended from "../../assets/logoBardExtended.svg"
+import botaoPessoas from "../../assets/botaoPessoas.svg"
 
 
 function CabecalhoHome(){
