@@ -9,8 +9,8 @@ export const ContainerFundo = styled.div`
     background-color: #2B2B2B;
     border-radius: 27px;
     width: 90vw;
-    height: 50vh;
-    margin-top: 60px;
+    height: 90vh;
+    margin-top: 50px;
     margin-left: 8px;
     padding-top: 25px;
     align-items: center;
@@ -20,7 +20,7 @@ export const ParteFuncional = styled.div`
     display:flex;
     align-items: center;
     background-image: url(${fundoLogin});
-    height: 50vh;
+    height: 100vh;
     width: 100vw;
 `
 
@@ -36,10 +36,12 @@ export const Titulo = styled.h2`
 `
 
 export const ContainerLinha = styled.div`
-    width: 20vw;
+    width: 28vw;
     height: 0.44vh;
     background-color: #827397;
-    align-items: center;
-    margin-bottom: 15px;
-    
+`
+
+export const Campos = styled.div`
+    margin-left: 30px;
+    margin-right: 30px;
 `

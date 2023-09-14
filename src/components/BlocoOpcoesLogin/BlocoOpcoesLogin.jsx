@@ -1,7 +1,6 @@
 import styled from "styled-components"
 import fundoLogin from "../../assets/fundoLogin.jpg"
 
-
 export const ContainerFundo = styled.div`
     display: flex;
     flex-direction: column;
@@ -20,8 +19,9 @@ export const ParteFuncional = styled.div`
     display:flex;
     align-items: center;
     background-image: url(${fundoLogin});
-    height: 50vh;
+    height: 64vh;
     width: 100vw;
+    padding-left: 7px;
 `
 
 export const Fonte = styled.h1`
@@ -42,4 +42,8 @@ export const ContainerLinha = styled.div`
     align-items: center;
     margin-bottom: 15px;
     
+`
+
+export const parteBotao = styled.div`
+    margin-bottom: 10px;
 `

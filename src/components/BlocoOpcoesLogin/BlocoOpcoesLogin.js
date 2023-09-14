@@ -3,40 +3,40 @@ import { Input } from '@chakra-ui/react'
 
 import iconGoogle from "../../assets/iconGoogle.png"
 import iconApple from "../../assets/iconApple.png"
-import { ContainerFundo, ParteFuncional, Fonte, Titulo, ContainerLinha } from './BlocoOpcoesLogin.jsx'
+import { ContainerFundo, ParteFuncional, Fonte, Titulo, ContainerLinha, parteBotao } from './BlocoOpcoesLogin.jsx'
 
 function BlocoOpcoesLogin() {
     return (
-        <>
-            <ParteFuncional>
-                <ContainerFundo>
+        <ParteFuncional>
+            <ContainerFundo>
 
-                    <Titulo>Login
-                        <ContainerLinha />
-                    </Titulo>
-                    
-                       
-                    <Button h='8vh' w='80vw' background-color='white'  leftIcon={<img src={iconGoogle} />}>
-                        Conectar com o Google
-                    </Button>
+                <Titulo>Login
+                    <ContainerLinha />
+                </Titulo>
 
-                    <Button h='8vh' w='80vw' background-color='white' leftIcon={<img src={iconApple} />}>
-                        Conectar com o Apple ID
-                    </Button>
 
-                    <Fonte>Email:
-                    <Input placeholder='Basic usage' variant='solid'/>
-                    </Fonte>
+                <Button h='8vh' w='80vw' background-color='white' leftIcon={<img src={iconGoogle} />}>
+                    Conectar com o Google
+                </Button>
 
-                    <Fonte>Senha:
-                    <Input placeholder='Basic usage' variant='solid'/>
-                    </Fonte>
+                <Button h='8vh' w='80vw' background-color='white' leftIcon={<img src={iconApple} />}>
+                    Conectar com o Apple ID
+                </Button>
 
+                <Fonte>Email:
+                    <Input placeholder='Basic usage' variant='solid' />
+                </Fonte>
+
+                <Fonte>Senha:
+                    <Input placeholder='Basic usage' variant='solid' />
+                </Fonte>
+
+                <parteBotao>
                     <Button colorScheme='blue'>Entrar</Button>
+                </parteBotao>
 
-                </ContainerFundo>
-            </ParteFuncional>
-        </>
+            </ContainerFundo>
+        </ParteFuncional>
     )
 }
 
