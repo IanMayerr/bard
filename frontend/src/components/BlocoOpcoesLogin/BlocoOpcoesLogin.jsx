@@ -8,10 +8,12 @@ export const ContainerFundo = styled.div`
     background-color: #2B2B2B;
     border-radius: 27px;
     width: 90vw;
-    height: 50vh;
-    margin-top: 60px;
+    height: 62vh;
+    margin-top: 30px;
     margin-left: 8px;
+    margin-bottom: 29px;
     padding-top: 25px;
+    padding-bottom: 10px;
     align-items: center;
 `
 
@@ -19,13 +21,19 @@ export const ParteFuncional = styled.div`
     display:flex;
     align-items: center;
     background-image: url(${fundoLogin});
-    height: 64vh;
+    height: 100%;
     width: 100vw;
     padding-left: 7px;
 `
 
 export const Fonte = styled.h1`
     color: white;
+    width: 80vw;
+`
+
+export const Fonte2 = styled.h1`
+    color: black;
+    width: 80vw;
 `
 
 export const Titulo = styled.h2`
@@ -41,9 +49,9 @@ export const ContainerLinha = styled.div`
     background-color: #827397;
     align-items: center;
     margin-bottom: 15px;
-    
 `
 
-export const parteBotao = styled.div`
-    margin-bottom: 10px;
+export const parteBotao = styled.button`
+    margin-bottom: 50px;
+    padding-bottom: 15px;
 `

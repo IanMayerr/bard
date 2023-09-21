@@ -3,7 +3,7 @@ import { Input } from '@chakra-ui/react'
 
 import iconGoogle from "../../assets/iconGoogle.png"
 import iconApple from "../../assets/iconApple.png"
-import { ContainerFundo, ParteFuncional, Fonte, Titulo, ContainerLinha, parteBotao } from './BlocoOpcoesLogin.jsx'
+import { ContainerFundo, ParteFuncional, Fonte, Titulo, ContainerLinha, parteBotao, Fonte2 } from './BlocoOpcoesLogin.jsx'
 
 function BlocoOpcoesLogin() {
     return (
@@ -14,7 +14,7 @@ function BlocoOpcoesLogin() {
                     <ContainerLinha />
                 </Titulo>
 
-
+            
                 <Button h='8vh' w='80vw' background-color='white' leftIcon={<img src={iconGoogle} />}>
                     Conectar com o Google
                 </Button>
@@ -24,15 +24,15 @@ function BlocoOpcoesLogin() {
                 </Button>
 
                 <Fonte>Email:
-                    <Input placeholder='Basic usage' variant='solid' />
+                    <Fonte2><Input placeholder='Basic usage' variant='solid' /></Fonte2>
                 </Fonte>
 
                 <Fonte>Senha:
-                    <Input placeholder='Basic usage' variant='solid' />
+                    <Fonte2><Input placeholder='Basic usage' variant='solid' /></Fonte2>
                 </Fonte>
 
                 <parteBotao>
-                    <Button colorScheme='blue'>Entrar</Button>
+                    <Button colorScheme='blue' width='40vw'>Entrar</Button>
                 </parteBotao>
 
             </ContainerFundo>
