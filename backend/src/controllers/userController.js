@@ -57,7 +57,7 @@ async function storeUser(request, response) {
                     .status(201)
                     .json({
                         success: true,
-                        message: `Sucesso! Usuário cadastrado.`,
+                        message: `Sucesso! Usuário cadastrado com êxito.`,
                         data: results
                     });
             } else {
@@ -65,7 +65,7 @@ async function storeUser(request, response) {
                     .status(400)
                     .json({
                         success: false,
-                        message: `Não foi possível realizar o cadastro. Verifique os dados informados`,
+                        message: `Não foi possível realizar o cadastro. Verifique seus dados e tente novamente`,
                         query: err.sql,
                         sqlMessage: err.sqlMessage
                     });
@@ -73,7 +73,7 @@ async function storeUser(request, response) {
         } catch (e) { // Caso aconteça algum erro na execução
             response.status(400).json({
                     succes: false,
-                    message: "Ocorreu um erro. Não foi possível cadastrar usuário!",
+                    message: "Ocorreu um erro. Não foi possível cadastrar o usuário!",
                     query: err.sql,
                     sqlMessage: err.sqlMessage
                 });
