@@ -1,78 +1,56 @@
-import { Fundo, Letra1, Letra2, Letra3, Letra4, Letra5 } from "./AbaLateral.jsx"
+import { Fundo, Img1, Letra1, Letra2, Letra3, Letra4, Letra5, Letra6, PrimeiraParte, SegundaParte, TerceiraParte } from "./AbaLateral.jsx"
 import fotoPerfil from "../../assets/fotoPerfil.svg"
 import botaoAdicionarConta from "../../assets/botaoAdicionarConta.svg"
 
+// import { Slide } from '@chakra-ui/react'
+
 
 function AbaLateral() {
+
+    // <Button onClick={onToggle}>Click Me</Button>
+    // const { isOpen, onToggle } = useDisclosure()
+
     return (
         <>
-
-            {/* function SlideFadeEx() {
-                const {isOpen, onToggle} = useDisclosure()
-
-                return (
-                <>
-                    <Button onClick={onToggle}>Click Me</Button>
-                    <SlideFade in={isOpen} offsetY='20px'>
-                    <Box
-                        p='40px'
-                        color='white'
-                        mt='4'
-                        bg='teal.500'
-                        rounded='md'
-                        shadow='md'
-                    >
-                        <Lorem count={1} />
-                    </Box>
-                </SlideFade>
-            </>
-            )
-        } */}
-
+            {/* <Slide direction='left' in={isOpen} style={{ zIndex: 10 }}>
+                <Box
+                    p='40px'
+                    color='white'
+                    mt='4'
+                    bg='teal.500'
+                    rounded='md'
+                    shadow='md'
+                > */}
             <Fundo>
 
-                <div>
+                <PrimeiraParte>
                     <Letra1>Ian Mayer</Letra1>
-                    <img src={fotoPerfil} alt='' />
-                </div>
-
-                <div>
-                    <Letra3>Músico(a) Amador(a)</Letra3>
-                </div>
-
-                <div>
+                    <Img1 src={fotoPerfil} alt='' />
                     <Letra2>@ianziito</Letra2>
-                </div>
+                    <Letra3>Músico(a) Amador(a)</Letra3>
+                </PrimeiraParte>
 
-                <div>
+                <SegundaParte>
                     <img src={botaoAdicionarConta} alt='' />
                     <Letra5>Adicionar conta</Letra5>
-                </div>
+                </SegundaParte>
 
-                <div>
+                <TerceiraParte>
                     <Letra4>Meu Perfil</Letra4>
-                </div>
 
-                <div>
-                    <Letra4>Começar Transmissão</Letra4>
-                </div>
-
-                <div>
                     <Letra4>Buscar</Letra4>
-                </div>
 
-                <div>
                     <Letra4>Publicar</Letra4>
-                </div>
 
-                <div>
                     <Letra4>Sair</Letra4>
-                </div>
 
-                <div>
-                    <Letra1>v0.1 alpha</Letra1>
-                </div>
+                    <Letra6>v0.1 alpha</Letra6>
+                </TerceiraParte>
+
             </Fundo>
+
+            {/* </Box>
+            </Slide> */}
         </>
     )
 }
