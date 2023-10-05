@@ -7,10 +7,8 @@ import { Fundo } from "./Home.jsx"
 function Home() {
     return (
         <Fundo>
-            
             <CabecalhoHome/>
             <Card />
-           
         </Fundo>
     )
 }

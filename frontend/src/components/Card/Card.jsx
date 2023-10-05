@@ -1,14 +1,16 @@
 import styled from "styled-components"
 
-export const LinhaSeparadora = styled.div`
-    height: 0.44vh;
+export const ContainerSeparadora = styled.div`
     width: 90%;
-    background-color: #827397;
     margin-top: 25px;
+    border-top: 3px solid #827397;
 `
 
-export const Centralizar = styled.div`
+export const Centralizar = styled.div `
     align-items: center;
+    display: flex;
+    justify-content: center;
+
 `
 
 export const Letra1 = styled.h1`
