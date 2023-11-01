@@ -3,13 +3,16 @@ import { Banner, Nome, Arroba, Cidade, Fundo, ParteDeCima, Img, Status, ParteDoM
 import fotoPerfil from "../../assets/fotoPerfil.svg"
 import iconeLocalizacao from "../../assets/iconeLocalizacao.svg"
 import Card from "../../components/Card/Card.js"
+import { Link } from "react-router-dom"
 
 function Perfil() {
     return (
         <>
             <Fundo>
                 <Banner>
+                    <Link to="/Home">
                     <img src={setaVoltar} alt='' />
+                    </Link>
                 </Banner>
 
                 <ParteDeCima>

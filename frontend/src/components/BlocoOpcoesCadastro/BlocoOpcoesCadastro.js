@@ -1,5 +1,6 @@
 import { Button } from '@chakra-ui/react'
 import { Input } from '@chakra-ui/react'
+import { Link } from "react-router-dom"
 
 import { ContainerFundo, ParteFuncional, Fonte, Titulo, ContainerLinha, Campos } from './BlocoOpcoesCadastro.jsx'
 
@@ -49,7 +50,9 @@ function BlocoOpcoesCadastro() {
                     </Fonte>
                 </Campos>
 
+                <Link to="/Login">
                 <Button colorScheme='purple'>Finalizar</Button>
+                </Link>
 
             </ContainerFundo>
         </ParteFuncional>

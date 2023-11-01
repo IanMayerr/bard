@@ -1,26 +1,13 @@
 import { Fundo, Img1, Letra1, Letra2, Letra3, Letra4, Letra5, Letra6, PrimeiraParte, SegundaParte, TerceiraParte } from "./AbaLateral.jsx"
 import fotoPerfil from "../../assets/fotoPerfil.svg"
 import botaoAdicionarConta from "../../assets/botaoAdicionarConta.svg"
-
-// import { Slide } from '@chakra-ui/react'
-
+import { Link } from "react-router-dom"
 
 function AbaLateral() {
 
-    // <Button onClick={onToggle}>Click Me</Button>
-    // const { isOpen, onToggle } = useDisclosure()
-
+   
     return (
         <>
-            {/* <Slide direction='left' in={isOpen} style={{ zIndex: 10 }}>
-                <Box
-                    p='40px'
-                    color='white'
-                    mt='4'
-                    bg='teal.500'
-                    rounded='md'
-                    shadow='md'
-                > */}
             <Fundo>
 
                 <PrimeiraParte>
@@ -36,21 +23,22 @@ function AbaLateral() {
                 </SegundaParte>
 
                 <TerceiraParte>
+                    <Link to="/Perfil">
                     <Letra4>Meu Perfil</Letra4>
+                    </Link>
 
                     <Letra4>Buscar</Letra4>
 
                     <Letra4>Publicar</Letra4>
 
+                    <Link to="/Login">
                     <Letra4>Sair</Letra4>
+                    </Link>
 
                     <Letra6>v0.1 alpha</Letra6>
                 </TerceiraParte>
 
             </Fundo>
-
-            {/* </Box>
-            </Slide> */}
         </>
     )
 }
