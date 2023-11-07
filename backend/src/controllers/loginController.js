@@ -23,13 +23,18 @@ async function login(request, response) {
     // Executa a ação no banco e valida os retornos para o client que realizou a solicitação
     connection.query(query, params, (err, results) => {
         try {            
-            if (results.length > 0) {                
-                bcrypt.compare(request.body.senha, results[0].senha, (err, result) => {
+            if (results.length > 0) {            
+
+                if(request.body.password === results[0].senha) {
+                    
                     if (err) {                        
-                        return response.status(401).send({
-                            msg: 'Email or password is incorrect!'
-                        });
-                    } else if(result) {
+                        response
+                            .status(400)
+                            .json({
+                                success: false,
+                                message: 'Erro'
+                            })
+                    } else {
                         const id = results[0].id;
                         const token = jwt.sign({ userId: id },'the-super-strong-secrect',{ expiresIn: 300 });
                         results[0]['token'] = token; 
@@ -42,7 +47,7 @@ async function login(request, response) {
                             data: results
                         });
                     }
-                })
+                }
                 
             } else {
                 response
