@@ -4,6 +4,7 @@ import logoBardExtended from "../../assets/logoBardExtended.svg"
 import botaoPessoas from "../../assets/botaoPessoas.svg"
 import { useDisclosure, DrawerContent, Drawer, DrawerOverlay, DrawerBody } from '@chakra-ui/react'
 import AbaLateral from "../AbaLateral/AbaLateral.js"
+import { Fade, ScaleFade, Slide, SlideFade, Collapse, Button, Box } from '@chakra-ui/react'
 
 
 
@@ -17,7 +18,7 @@ function CabecalhoHome() {
 
                     <Img1 onClick={onOpen} src={fotoPerfil} alt='' />
                     <Drawer placement='left' onClose={onClose} isOpen={isOpen}>
-                        <DrawerOverlay />
+                        
                         <DrawerContent>
                             <DrawerBody w='30vw' h='100%'>
                                 <AbaLateral />
@@ -32,6 +33,7 @@ function CabecalhoHome() {
             </CabecalhoSuperior>
         </>
     )
+
 }
 
 export default CabecalhoHome

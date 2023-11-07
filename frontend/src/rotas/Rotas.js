@@ -15,6 +15,7 @@ function Rotas(){
             <Route path="CadastroA" element={<CadastroA/>}></Route>
             <Route path="CadastroG" element={<CadastroG/>}></Route>
             <Route path="Perfil" element={<Perfil/>}></Route>
+            <Route path="Login" element={<Login/>}></Route>
         </Routes>
         </BrowserRouter>
     )

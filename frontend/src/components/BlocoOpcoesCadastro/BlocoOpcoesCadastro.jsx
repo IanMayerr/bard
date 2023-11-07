@@ -12,7 +12,7 @@ export const ContainerFundo = styled.div`
     height: 90vh;
     margin-top: 50px;
     margin-left: 8px;
-    padding-top: 25px;
+    padding-top: 20px;
     align-items: center;
 `
 

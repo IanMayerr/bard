@@ -4,15 +4,74 @@ import fotoPerfil from "../../assets/fotoPerfil.svg"
 import iconeLocalizacao from "../../assets/iconeLocalizacao.svg"
 import Card from "../../components/Card/Card.js"
 import { Link } from "react-router-dom"
+import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, Button, FormControl, FormLabel, Input } from '@chakra-ui/react'
+import { useDisclosure } from "@chakra-ui/react"
+import React from "react"
+
 
 function Perfil() {
+    const { isOpen, onOpen, onClose } = useDisclosure()
+
+    const initialRef = React.useRef(null)
+    const finalRef = React.useRef(null)
+
+
     return (
         <>
             <Fundo>
                 <Banner>
                     <Link to="/Home">
-                    <img src={setaVoltar} alt='' />
+                        <img src={setaVoltar} alt='' />
                     </Link>
+                    
+                        <Button onClick={onOpen}>Open Modal</Button>
+
+                        <Modal
+                            initialFocusRef={initialRef}
+                            finalFocusRef={finalRef}
+                            isOpen={isOpen}
+                            onClose={onClose}
+                        >
+                            <ModalOverlay />
+                            <ModalContent>
+                                <ModalHeader>Editar informações</ModalHeader>
+                                <ModalCloseButton />
+                                <ModalBody pb={6}>
+                                    <FormControl>
+                                        <FormLabel>Nome:</FormLabel>
+                                        <Input />
+                                    </FormControl>
+
+                                    <FormControl mt={4}>
+                                        <FormLabel>Nome de usuário:</FormLabel>
+                                        <Input />
+                                    </FormControl>
+
+                                    <FormControl mt={4}>
+                                        <FormLabel>Status:</FormLabel>
+                                        <Input />
+                                    </FormControl>
+
+                                    <FormControl mt={4}>
+                                        <FormLabel>Localização:</FormLabel>
+                                        <Input />
+                                    </FormControl>
+
+                                    <FormControl mt={4}>
+                                        <FormLabel>Biografia:</FormLabel>
+                                        <Input />
+                                    </FormControl>
+                                </ModalBody>
+
+                                <ModalFooter>
+                                    <Button colorScheme='blue' mr={3}>
+                                        Save
+                                    </Button>
+                                    <Button onClick={onClose}>Cancel</Button>
+                                </ModalFooter>
+                            </ModalContent>
+                        </Modal>
+    
                 </Banner>
 
                 <ParteDeCima>
