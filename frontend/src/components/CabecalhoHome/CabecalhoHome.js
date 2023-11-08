@@ -2,10 +2,8 @@ import { CabecalhoSuperior, Container1, Img1, Img2, Img3 } from "./CabecalhoHome
 import fotoPerfil from "../../assets/fotoPerfil.svg"
 import logoBardExtended from "../../assets/logoBardExtended.svg"
 import botaoPessoas from "../../assets/botaoPessoas.svg"
-import { useDisclosure, DrawerContent, Drawer, DrawerOverlay, DrawerBody } from '@chakra-ui/react'
+import { useDisclosure, DrawerContent, Drawer, DrawerBody } from '@chakra-ui/react'
 import AbaLateral from "../AbaLateral/AbaLateral.js"
-import { Fade, ScaleFade, Slide, SlideFade, Collapse, Button, Box } from '@chakra-ui/react'
-
 
 
 function CabecalhoHome() {

@@ -6,7 +6,9 @@ import { MargemCima } from "./CadastroA.jsx"
 function CadastroA(){
     return(
         <>
-        <MargemCima />
+        {/* <MargemCima>
+        </MargemCima> */}
+
         <Fundo>
             <BlocoOpcoesCadastro />
         </Fundo>

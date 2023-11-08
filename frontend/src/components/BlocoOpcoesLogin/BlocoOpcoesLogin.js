@@ -74,11 +74,10 @@ function BlocoOpcoesLogin() {
                     </Fonte2>
                 </Fonte>
 
-                {/* <Link to="/Home"> */}
+                
                 <parteBotao>
                     <Button colorScheme='blue' width='40vw' onClick={handleSubmit}>Entrar</Button>
                 </parteBotao>
-                {/* </Link> */}
 
             </ContainerFundo>
         </ParteFuncional>

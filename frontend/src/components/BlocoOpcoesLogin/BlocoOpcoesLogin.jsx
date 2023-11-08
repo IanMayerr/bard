@@ -4,7 +4,7 @@ import fundoLogin from "../../assets/fundoLogin.jpg"
 export const ContainerFundo = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 2vh;
+    gap: 1.5vh;
     background-color: #2B2B2B;
     border-radius: 27px;
     width: 90vw;

@@ -1,7 +1,7 @@
 import { Button } from '@chakra-ui/react'
 import { Input } from '@chakra-ui/react'
 import { Link } from "react-router-dom"
-import { ContainerFundo, ParteFuncional, Fonte, Titulo, ContainerLinha, Campos } from './BlocoOpcoesCadastro.jsx'
+import { ContainerFundo, ParteFuncional, Fonte, Titulo, ContainerLinha, Campos, ParteFuncionalCadastro, SelectOption } from './BlocoOpcoesCadastro.jsx'
 import { useState } from 'react'
 import axios from 'axios'
 import Select from "react-select"
@@ -44,7 +44,7 @@ function BlocoOpcoesCadastro() {
     ]
 
     return (
-        <ParteFuncional>
+        <ParteFuncionalCadastro>
             <ContainerFundo>
 
 
@@ -67,10 +67,18 @@ function BlocoOpcoesCadastro() {
 
                 <Campos>
                     <Fonte>Você faz parte de qual grupo de musicos?
-                        <Select 
+                        {/* <Select 
                             options={option}
                             name="color"
-                        />
+                            colorText='#000'
+                        /> */}
+                          {/* <SelectOption>
+                            <option value={'Músico(a) profissional'}>Músico(a) profissional</option>
+                            <option value={'Músico(a) profissional'}>Músico(a) profissional</option>
+                            <option value={'Músico(a) profissional'}>Músico(a) profissional</option>
+                          </SelectOption> */}
+
+                            
                     </Fonte>
                 </Campos>
         
@@ -123,12 +131,6 @@ function BlocoOpcoesCadastro() {
                     </Fonte>
                 </Campos>
 
-                {/* <Campos>
-                    <Fonte>Insira seu aniversário:
-                        <Input placeholder='Basic usage' variant='solid' />
-                    </Fonte>
-                </Campos> */}
-
                 <Link to="/Login">
                     <Button
                         colorScheme='purple'
@@ -139,7 +141,7 @@ function BlocoOpcoesCadastro() {
                 </Link>
 
             </ContainerFundo>
-        </ParteFuncional>
+        </ParteFuncionalCadastro>
     )
 }
 

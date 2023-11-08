@@ -4,7 +4,7 @@ import fundoCadastro from "../../assets/fundoCadastro.jpg"
 export const MargemCima = styled.div`
     background-color: #2B2B2B;
     width: 100%;
-    height: 5vh;
+    /* height: 3vh; */
 `
 
 export const Fundo = styled.div`
