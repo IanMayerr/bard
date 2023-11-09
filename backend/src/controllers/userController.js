@@ -46,7 +46,7 @@ async function storeUser(request, response) {
         request.body.email,
         request.body.password,
         request.body.nome,
-        'Músico(a) profissional',
+        request.body.grupo,
         request.body.usuario,
         request.body.local,
         request.body.biografia
