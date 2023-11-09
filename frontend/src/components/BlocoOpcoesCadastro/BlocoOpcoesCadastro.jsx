@@ -10,8 +10,6 @@ export const ContainerFundo = styled.div`
     border-radius: 27px;
     width: 90vw;
     height: 90vh;
-    /* margin-left: 5vw; */
-
     padding-top: 20px;
     align-items: center;
 `
@@ -20,11 +18,14 @@ export const SelectOption = styled.select`
     color: black;
 `
 
+export const MudarACor = styled.div`
+    color: black;
+`
+
 export const ParteFuncionalCadastro = styled.div`
      display:flex;
     align-items: center;
     justify-content: center;
-    /* background-image: url(${fundoLogin}); */
     background-size: 80%;
     background-repeat: no-repeat;
     height: 96vh;

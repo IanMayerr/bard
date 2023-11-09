@@ -32,7 +32,6 @@ export const Arroba = styled.h1`
     padding-left: 5px;
     padding-bottom: 8px;
     text-shadow: 1.5px 1.5px 1.5px black;
-
 `
 
 export const Status = styled.h1`
@@ -70,8 +69,6 @@ export const Biografia = styled.h1`
 export const TextoBiografia = styled.div`
     color: #D8B9C3;
     font-size: 14px;
-    /* text-shadow: 0.5px 0.5px 0.5px #67595E; */
-
 `
 
 export const ParteDeCima = styled.div`
@@ -100,3 +97,4 @@ export const ParteDoMeio = styled.div`
     padding-left: 20px;
     padding-right: 10px;
 `
+

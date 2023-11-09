@@ -10,7 +10,6 @@ export const Centralizar = styled.div `
     align-items: center;
     display: flex;
     justify-content: center;
-
 `
 
 export const Letra1 = styled.h1`

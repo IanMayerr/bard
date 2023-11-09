@@ -1,12 +1,12 @@
 import setaVoltar from "../../assets/setaVoltar.svg"
-import { Banner, Nome, Arroba, Cidade, Fundo, ParteDeCima, Img, Status, ParteDoMeio, Biografia, TextoBiografia, Img2 } from "./Perfil.jsx"
+import { Banner, Nome, Arroba, Cidade, Fundo, ParteDeCima, Img, Status, ParteDoMeio, Biografia, TextoBiografia, Img2, Botão } from "./Perfil.jsx"
 import fotoPerfil from "../../assets/fotoPerfil.svg"
 import iconeLocalizacao from "../../assets/iconeLocalizacao.svg"
 import Card from "../../components/Card/Card.js"
 import { Link } from "react-router-dom"
 import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, Button, FormControl, FormLabel, Input } from '@chakra-ui/react'
 import { useDisclosure } from "@chakra-ui/react"
-import React from "react"
+import { React, useState } from "react"
 
 
 function Perfil() {
@@ -15,6 +15,11 @@ function Perfil() {
     const initialRef = React.useRef(null)
     const finalRef = React.useRef(null)
 
+    const [nome, setNome] = useState("");
+    const [usuario, setUsuario] = useState("");
+    const [grupo, setGrupo] = useState("");
+    const [local, setLocal] = useState("");
+    const [biografia, setBiografia] = useState("");
 
     return (
         <>
@@ -24,7 +29,8 @@ function Perfil() {
                         <img src={setaVoltar} alt='' />
                     </Link>
                     
-                        <Button onClick={onOpen}>Open Modal</Button>
+                        
+                        <Button >Open Modal</Button>
 
                         <Modal
                             initialFocusRef={initialRef}
