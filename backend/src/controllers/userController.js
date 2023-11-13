@@ -170,9 +170,28 @@ async function deleteUser(request, response) {
     });
 }
 
+async function usuario(resquest, response) {
+    const query = 'SELECT * FROM usuarios WHERE id_usuario = ?;';
+
+    const params = Array(request.params.id);
+
+    connection.query(query, params, (err, results) => {
+        if(results) {
+            response
+                .status(200)
+                .json({
+                    success: true,
+                    message: "dsdsds",
+                    data: results
+                })
+        }
+    });
+}
+
 module.exports = {
     listUsers,
     storeUser,
     updateUser,
-    deleteUser
+    deleteUser,
+    usuario
 }
