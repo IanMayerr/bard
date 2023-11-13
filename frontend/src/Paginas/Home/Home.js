@@ -1,6 +1,6 @@
 import CabecalhoHome from "../../components/CabecalhoHome/CabecalhoHome"
 import Card from "../../components/Card/Card.js"
-import { Fundo, Botão } from "./Home.jsx"
+import { Fundo, Botão, LugarBotão } from "./Home.jsx"
 import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, Button, FormControl, FormLabel, Input } from '@chakra-ui/react'
 import { useDisclosure } from "@chakra-ui/react"
 import React from "react"
@@ -10,18 +10,17 @@ function Home() {
 
   const { isOpen, onOpen, onClose } = useDisclosure()
 
-  const initialRef = React.useRef(null)
-  const finalRef = React.useRef(null)
-
-
+  const initialRef = React.useRef(null);
+  const finalRef = React.useRef(null);
 
   return (
     <Fundo>
       <CabecalhoHome />
       <Card />
 
-      <Botão onClick={onOpen}>+</Botão>
-      
+      <LugarBotão>
+        <Botão onClick={onOpen}>+</Botão>
+      </LugarBotão>
 
       <Modal
         initialFocusRef={initialRef}

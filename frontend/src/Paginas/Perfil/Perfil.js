@@ -6,20 +6,50 @@ import Card from "../../components/Card/Card.js"
 import { Link } from "react-router-dom"
 import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, Button, FormControl, FormLabel, Input } from '@chakra-ui/react'
 import { useDisclosure } from "@chakra-ui/react"
-import { React, useState } from "react"
+import { React, useEffect, useState } from "react"
+import axios from 'axios';
 
 
 function Perfil() {
     const { isOpen, onOpen, onClose } = useDisclosure()
-
-    const initialRef = React.useRef(null)
-    const finalRef = React.useRef(null)
-
     const [nome, setNome] = useState("");
     const [usuario, setUsuario] = useState("");
     const [grupo, setGrupo] = useState("");
     const [local, setLocal] = useState("");
     const [biografia, setBiografia] = useState("");
+    const [data, setData] = useState([]);
+
+    const handleSubmit = () => {
+        alert('PEGAR OS DADOS DO FORMULARIO')
+
+        const data = {
+
+        }
+
+        // chamar rota da api para cadastrar perfil
+        const response = axios.post('URL/perfil/create', data);
+
+        if (response.data.success) {
+            alert('Deucerto')
+        } else {
+            alert("Nao deu certo");
+        }
+    };
+
+    const fetchData = () => {
+        const idUsuario = localStorage.getItem('@Auth:id');
+        const response = axios.get('URL/usuario/' + idUsuario);
+
+        if (response.data.sucess) {
+            setData(response.data.data);
+        } else {
+
+        }
+    };
+
+    useEffect(() => {
+        fetchData();
+    }, [])
 
     return (
         <>
@@ -28,56 +58,67 @@ function Perfil() {
                     <Link to="/Home">
                         <img src={setaVoltar} alt='' />
                     </Link>
-                    
-                        
-                        <Button >Open Modal</Button>
 
-                        <Modal
-                            initialFocusRef={initialRef}
-                            finalFocusRef={finalRef}
-                            isOpen={isOpen}
-                            onClose={onClose}
-                        >
-                            <ModalOverlay />
-                            <ModalContent>
-                                <ModalHeader>Editar informações</ModalHeader>
-                                <ModalCloseButton />
-                                <ModalBody pb={6}>
-                                    <FormControl>
-                                        <FormLabel>Nome:</FormLabel>
-                                        <Input />
-                                    </FormControl>
+                    <Button onClick={onOpen}>Open Modal</Button>
 
-                                    <FormControl mt={4}>
-                                        <FormLabel>Nome de usuário:</FormLabel>
-                                        <Input />
-                                    </FormControl>
+                    <Modal closeOnOverlayClick={false} isOpen={isOpen} onClose={onClose}>
+                        <ModalOverlay />
+                        <ModalContent>
 
-                                    <FormControl mt={4}>
-                                        <FormLabel>Status:</FormLabel>
-                                        <Input />
-                                    </FormControl>
+                            <ModalHeader>Editar informações</ModalHeader>
 
-                                    <FormControl mt={4}>
-                                        <FormLabel>Localização:</FormLabel>
-                                        <Input />
-                                    </FormControl>
+                            <ModalCloseButton />
 
-                                    <FormControl mt={4}>
-                                        <FormLabel>Biografia:</FormLabel>
-                                        <Input />
-                                    </FormControl>
-                                </ModalBody>
+                            <ModalBody pb={6}>
+                                <FormControl>
+                                    <FormLabel>Nome:</FormLabel>
+                                    <Input
+                                        value="data.nome"
+                                        onChange={(e) => setNome(e.target.value)}
+                                    />
+                                </FormControl>
 
-                                <ModalFooter>
-                                    <Button colorScheme='blue' mr={3}>
-                                        Save
-                                    </Button>
-                                    <Button onClick={onClose}>Cancel</Button>
-                                </ModalFooter>
-                            </ModalContent>
-                        </Modal>
-    
+                                <FormControl mt={4}>
+                                    <FormLabel>Nome de usuário:</FormLabel>
+                                    <Input 
+                                        value="data.usuario"
+                                        onChange={(e) => setUsuario(e.target.value)}
+                                    />
+                                </FormControl>
+
+                                <FormControl mt={4}>
+                                    <FormLabel>Status:</FormLabel>
+                                    <Input 
+                                        value="data.status"
+                                        onChange={(e) => setStatus(e.target.value)}
+                                    />
+                                </FormControl>
+
+                                <FormControl mt={4}>
+                                    <FormLabel>Localização:</FormLabel>
+                                    <Input 
+                                        value="data.localizacao"
+                                        onChange={(e) => setLocalizacao(e.target.value)}
+                                    />
+                                </FormControl>
+
+                                <FormControl mt={4}>
+                                    <FormLabel>Biografia:</FormLabel>
+                                    <Input 
+                                        value="data.biografia"
+                                        onChange={(e) => setBiografia(e.target.value)}
+                                    />
+                                </FormControl>
+                            </ModalBody>
+
+                            <ModalFooter>
+                                <Button colorScheme='blue' mr={3} onClick={handleSubmit}>
+                                    Salvar
+                                </Button>
+                                <Button onClick={onClose}>Cancelar</Button>
+                            </ModalFooter>
+                        </ModalContent>
+                    </Modal>
                 </Banner>
 
                 <ParteDeCima>

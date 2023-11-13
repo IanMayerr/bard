@@ -4,7 +4,6 @@ import botaoAdicionarConta from "../../assets/botaoAdicionarConta.svg"
 import { Link } from "react-router-dom"
 
 function AbaLateral() {
-
    
     return (
         <>
