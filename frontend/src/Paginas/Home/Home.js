@@ -36,6 +36,7 @@ function Home() {
           <ModalBody pb={6}>
             <FormControl>
               <FormLabel>Imagem:</FormLabel>
+              <Input type='file' accept="image/*"/>
             </FormControl>
 
             <FormControl mt={4}>

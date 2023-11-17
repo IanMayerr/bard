@@ -1,5 +1,5 @@
 import setaVoltar from "../../assets/setaVoltar.svg"
-import { Banner, Nome, Arroba, Cidade, Fundo, ParteDeCima, Img, Status, ParteDoMeio, Biografia, TextoBiografia, Img2, Botão } from "./Perfil.jsx"
+import { Banner, Nome, Arroba, Cidade, Fundo, ParteDeCima, Img, Status, ParteDoMeio, Biografia, TextoBiografia, Img2, LugarBotao, PlanoDeFundo, Select } from "./Perfil.jsx"
 import fotoPerfil from "../../assets/fotoPerfil.svg"
 import iconeLocalizacao from "../../assets/iconeLocalizacao.svg"
 import Card from "../../components/Card/Card.js"
@@ -17,33 +17,51 @@ function Perfil() {
     const [grupo, setGrupo] = useState("");
     const [local, setLocal] = useState("");
     const [biografia, setBiografia] = useState("");
-    const [data, setData] = useState([]);
+    const [dataUser, setDataUser] = useState([]);
 
-    const handleSubmit = () => {
-        alert('PEGAR OS DADOS DO FORMULARIO')
+    const userId = localStorage.getItem('@Auth:user_id')
+
+    const handleSubmit = async () => {
+        // alert('PEGAR OS DADOS DO FORMULARIO')
 
         const data = {
-
+            nome: nome === "" ? dataUser.nome : nome,
+            usuario: usuario === "" ? dataUser.usuario : usuario,
+            grupo: grupo === "" ? dataUser.grupo : grupo,
+            local: local === "" ? dataUser.local : local,
+            biografia: biografia === "" ? dataUser.biografia : biografia,
         }
-
-        // chamar rota da api para cadastrar perfil
-        const response = axios.post('URL/perfil/create', data);
+        console.log(data);
+        alert(JSON.stringify(data))
+        const response = await axios.put(`http://localhost:3005/api/updatePerfil/${userId}`, data);
 
         if (response.data.success) {
-            alert('Deucerto')
+            alert("Informações alteradas com sucesso!");
+
         } else {
-            alert("Nao deu certo");
+            alert("Deu um erro ao alterar as informações. Tente de novo mais tarde.");
         }
+        // chamar rota da api para cadastrar perfil
+        // const response = axios.post('URL/perfil/create', data);
+
+        // if (response.data.success) {
+        //     alert('Deucerto')
+        // } else {
+        //     alert("Nao deu certo");
+        // }
     };
 
-    const fetchData = () => {
-        const idUsuario = localStorage.getItem('@Auth:id');
-        const response = axios.get('URL/usuario/' + idUsuario);
-
-        if (response.data.sucess) {
-            setData(response.data.data);
+    const fetchData = async () => {
+        const idUsuario = localStorage.getItem('@Auth:user_id');
+        console.log(idUsuario);
+        const response = await axios.get('http://localhost:3005/api/usuario/' + idUsuario);
+        console.log(response.data.success);
+        if (response.data.success) {
+            console.log(response.data.data);
+            setDataUser(response.data.data[0]);
+            console.log(dataUser);
         } else {
-
+            alert("Algo deu de errado")
         }
     };
 
@@ -51,95 +69,108 @@ function Perfil() {
         fetchData();
     }, [])
 
+    const option = [
+        { value: 'Músico(a) profissional', label: 'Músico(a) profissional' },
+        { value: 'Músico(a) iniciante/avançado', label: 'Músico(a) iniciante/avançado' },
+        { value: 'Empresa/Comércio', label: 'Empresa/Comércio' }
+    ]
+
     return (
         <>
-            <Fundo>
-                <Banner>
-                    <Link to="/Home">
-                        <img src={setaVoltar} alt='' />
-                    </Link>
+            <PlanoDeFundo>
+                <Fundo>
+                    <Banner>
+                        <Link to="/Home">
+                            <img src={setaVoltar} alt='' />
+                        </Link>
 
-                    <Button onClick={onOpen}>Open Modal</Button>
+                        <LugarBotao>
+                            <Button onClick={onOpen}>Editar Perfil</Button>
+                        </LugarBotao>
 
-                    <Modal closeOnOverlayClick={false} isOpen={isOpen} onClose={onClose}>
-                        <ModalOverlay />
-                        <ModalContent>
+                        <Modal closeOnOverlayClick={false} isOpen={isOpen} onClose={onClose}>
+                            <ModalOverlay />
+                            <ModalContent>
 
-                            <ModalHeader>Editar informações</ModalHeader>
+                                <ModalHeader>Editar informações</ModalHeader>
 
-                            <ModalCloseButton />
+                                <ModalCloseButton />
 
-                            <ModalBody pb={6}>
-                                <FormControl>
-                                    <FormLabel>Nome:</FormLabel>
-                                    <Input
-                                        value="data.nome"
-                                        onChange={(e) => setNome(e.target.value)}
-                                    />
-                                </FormControl>
+                                <ModalBody pb={6}>
 
-                                <FormControl mt={4}>
-                                    <FormLabel>Nome de usuário:</FormLabel>
-                                    <Input 
-                                        value="data.usuario"
-                                        onChange={(e) => setUsuario(e.target.value)}
-                                    />
-                                </FormControl>
+                                    <FormControl>
+                                        <FormLabel>Nome:</FormLabel>
+                                        <Input
+                                            defaultValue={dataUser.nome}
+                                            onChange={(e) => setNome(e.target.value, nome)}
+                                        />
+                                    </FormControl>
 
-                                <FormControl mt={4}>
-                                    <FormLabel>Status:</FormLabel>
-                                    <Input 
-                                        value="data.status"
-                                        onChange={(e) => setStatus(e.target.value)}
-                                    />
-                                </FormControl>
+                                    <FormControl mt={4}>
+                                        <FormLabel>Nome de usuário:</FormLabel>
+                                        <Input
+                                            defaultValue={dataUser.usuario}
+                                            onChange={(e) => setUsuario(e.target.value)}
+                                        />
+                                    </FormControl>
 
-                                <FormControl mt={4}>
-                                    <FormLabel>Localização:</FormLabel>
-                                    <Input 
-                                        value="data.localizacao"
-                                        onChange={(e) => setLocalizacao(e.target.value)}
-                                    />
-                                </FormControl>
+                                    <FormControl mt={4}>
+                                        <FormLabel>Status:</FormLabel>
+                                        <Select value={grupo} onChange={(e) => setGrupo(e.target.value)} >
+                                            <option value="Músico(a) profissional">Músico(a) profissional</option>
+                                            <option value="Músico(a) iniciante/avançado">Músico(a) iniciante/avançado</option>
+                                            <option value="Empresa/Comércio">Empresa/Comércio</option>
+                                        </Select>
+                                    </FormControl>
 
-                                <FormControl mt={4}>
-                                    <FormLabel>Biografia:</FormLabel>
-                                    <Input 
-                                        value="data.biografia"
-                                        onChange={(e) => setBiografia(e.target.value)}
-                                    />
-                                </FormControl>
-                            </ModalBody>
+                                    <FormControl mt={4}>
+                                        <FormLabel>Localização:</FormLabel>
+                                        <Input
+                                            defaultValue={dataUser.local ? dataUser.local : ""}
+                                            onChange={(e) => setLocal(e.target.value)}
+                                        />
+                                    </FormControl>
 
-                            <ModalFooter>
-                                <Button colorScheme='blue' mr={3} onClick={handleSubmit}>
-                                    Salvar
-                                </Button>
-                                <Button onClick={onClose}>Cancelar</Button>
-                            </ModalFooter>
-                        </ModalContent>
-                    </Modal>
-                </Banner>
+                                    <FormControl mt={4}>
+                                        <FormLabel>Biografia:</FormLabel>
+                                        <Input
+                                            defaultValue={dataUser.biografia ? dataUser.biografia : ""}
+                                            onChange={(e) => setBiografia(e.target.value)}
+                                        />
+                                    </FormControl>
 
-                <ParteDeCima>
-                    <Img src={fotoPerfil} alt='' />
+                                </ModalBody>
 
-                    <Nome>Ian Mayer</Nome>
-                    <Arroba>@ianziito</Arroba>
-                    <Status>Status: Músico(a) Amadador(a)</Status>
-                    <Cidade>
-                        <Img2 src={iconeLocalizacao} alt='' />
-                        São Leopoldo
-                    </Cidade>
-                </ParteDeCima>
+                                <ModalFooter>
+                                    <Button colorScheme='blue' mr={3} onClick={handleSubmit}>
+                                        Salvar
+                                    </Button>
+                                    <Button onClick={onClose}>Cancelar</Button>
+                                </ModalFooter>
+                            </ModalContent>
+                        </Modal>
+                    </Banner>
 
-                <ParteDoMeio>
-                    <Biografia>Bio:</Biografia>
-                    <TextoBiografia>Músico iniciante. 17y. Gosto de tocar sertanejo e MPB. Disponível para fazer um som com qualquer um, chama na DM!</TextoBiografia>
-                </ParteDoMeio>
+                    <ParteDeCima>
+                        <Img src={fotoPerfil} alt='' />
 
-                <Card />
-            </Fundo>
+                        <Nome>{dataUser.nome}</Nome>
+                        <Arroba>{dataUser.usuario}</Arroba>
+                        <Status>Status:{dataUser.grupo}</Status>
+                        <Cidade>
+                            <Img2 src={iconeLocalizacao} alt='' />
+                            {dataUser.local}
+                        </Cidade>
+                    </ParteDeCima>
+
+                    <ParteDoMeio>
+                        <Biografia>Bio:</Biografia>
+                        <TextoBiografia>{dataUser.biografia}</TextoBiografia>
+                    </ParteDoMeio>
+
+                    <Card />
+                </Fundo>
+            </PlanoDeFundo>
         </>
     )
 }

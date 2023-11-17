@@ -54,3 +54,9 @@ export const Campos = styled.div`
     margin-left: 30px;
     margin-right: 30px;
 `
+
+export const Select = styled.select`
+    border-radius: 7px;
+    height: 6.5vh;
+    width: 70vw;
+`

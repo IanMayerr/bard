@@ -8,6 +8,10 @@ export const Banner = styled.div`
     padding-top: 5vh;
 `
 
+export const PlanoDeFundo = styled.div`
+    background-color: #4D4C7D;
+`
+
 export const Fundo = styled.div`
     background-color: #4D4C7D;
     height: 100%;
@@ -37,7 +41,7 @@ export const Arroba = styled.h1`
 export const Status = styled.h1`
     font-size: 12px;
     color: #D8B9C3;
-    opacity: 50%;
+    /* opacity: 50%; */
     grid-column: 3/4;
     padding-right:5px ;
     grid-row: 1/2;
@@ -98,3 +102,14 @@ export const ParteDoMeio = styled.div`
     padding-right: 10px;
 `
 
+export const LugarBotao = styled.div`
+    margin-left: 70vw;
+`
+
+export const Select = styled.select`
+    border-radius: 7px;
+    height: 6.5vh;
+    width: 70vw;
+    border: 1px solid gray;
+    width: 57vw;
+`

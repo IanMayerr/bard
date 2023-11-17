@@ -4,6 +4,23 @@ import balaofala from "../../assets/balãofala.svg"
 import coracao from "../../assets/coracao.svg"
 
 function Card() {
+
+    // const [imagem, setImagem] = useState('');
+    // const [descricao, setDescricao] = useState('');
+    // const [nome, setNome] = useState('');
+    // const [arroba, setArroba] = useState('');
+
+    // const handleSubmit = async () => {
+        // const data = {
+        //     imagem,
+        //     descricao,
+        //     nome,
+        //     arroba,
+        // }
+
+    //     console.log(data);
+    // }
+
     return (
         <>
             <Centralizar>
@@ -21,14 +38,14 @@ function Card() {
 
                     <div>
                         <img src="" alt="" />
-                        <Letra2>data</Letra2>
-                        <Letra2>horário</Letra2>
+                        <Letra2>descrição</Letra2>
+                        {/* <Letra2>horário</Letra2> */}
                     </div>
 
                     <div>
-                        <img src={balaofala} alt='' />
                         <img src={coracao} alt='' />
                         <img src={aviao} alt='' />
+                        <img src={balaofala} alt='' />
                     </div>
                 </ContainerSeparadora>
             </Centralizar>

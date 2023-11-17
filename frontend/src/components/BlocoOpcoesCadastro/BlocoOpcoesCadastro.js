@@ -1,10 +1,9 @@
 import { Button } from '@chakra-ui/react'
 import { Input } from '@chakra-ui/react'
 import { Link } from "react-router-dom"
-import { ContainerFundo, Fonte, Titulo, ContainerLinha, Campos, ParteFuncionalCadastro, SelectOption, MudarACor } from './BlocoOpcoesCadastro.jsx'
+import { ContainerFundo, Fonte, Titulo, ContainerLinha, Campos, ParteFuncionalCadastro, Select, MudarACor } from './BlocoOpcoesCadastro.jsx'
 import { useState } from 'react'
 import axios from 'axios'
-import Select from "react-select"
 
 function BlocoOpcoesCadastro() {
     const [email, setEmail] = useState("");
@@ -73,16 +72,11 @@ function BlocoOpcoesCadastro() {
                 <Campos>
                     <Fonte>Você faz parte de qual grupo de musicos?
                         <MudarACor>
-                            <select value={grupo} onChange={(e) => setGrupo(e.target.value)} >
+                            <Select value={grupo} onChange={(e) => setGrupo(e.target.value)} >
                                 <option value="Músico(a) profissional">Músico(a) profissional</option>
                                 <option value="Músico(a) iniciante/avançado">Músico(a) iniciante/avançado</option>
                                 <option value="Empresa/Comércio">Empresa/Comércio</option>
-                            </select>
-                            {/* <Select 
-                                value={grupo} 
-                                onChange={(e) => setGrupo(e.target.value)}
-                                options={option}
-                            /> */}
+                            </Select>
                         </MudarACor>
                     </Fonte>
                 </Campos>
@@ -120,6 +114,7 @@ function BlocoOpcoesCadastro() {
                             color={'#000'}
                             variant='solid'
                             value={nome}
+                            placeholder='Clave de Sol'
                             onChange={(e) => setNome(e.target.value)}
                         />
                     </Fonte>
@@ -131,6 +126,7 @@ function BlocoOpcoesCadastro() {
                             variant='solid'
                             color={'#000'}
                             value={usuario}
+                            placeholder='@clavinha_de_sol'
                             onChange={(e) => setUsuario(e.target.value)}
                         />
                     </Fonte>

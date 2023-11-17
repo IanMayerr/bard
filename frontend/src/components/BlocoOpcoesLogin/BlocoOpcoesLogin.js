@@ -25,6 +25,9 @@ function BlocoOpcoesLogin() {
 
         if (response.data.success) {
             alert(response.data.message);
+
+            const userId = response.data.data[0].id;
+            localStorage.setItem("@Auth:user_id", userId)
             navigate('/Home');
         } else {
                 alert("Deu erro");
