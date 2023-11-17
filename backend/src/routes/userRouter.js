@@ -17,7 +17,8 @@ const {
 router.get('/users', listUsers);
 router.get('/usuario/:id', usuario);
 router.post('/cadastro', storeUser);
-router.put('/user/:id', updateUser);
+// router.post('/publicacao', overView);
+router.put('/updatePerfil/:id', updateUser);
 router.delete('/user/:id', deleteUser);
 
 module.exports = router;
