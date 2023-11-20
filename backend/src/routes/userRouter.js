@@ -17,7 +17,6 @@ const {
 router.get('/users', listUsers);
 router.get('/usuario/:id', usuario);
 router.post('/cadastro', storeUser);
-// router.post('/publicacao', overView);
 router.put('/updatePerfil/:id', updateUser);
 router.delete('/user/:id', deleteUser);
 
