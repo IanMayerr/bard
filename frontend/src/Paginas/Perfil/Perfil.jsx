@@ -103,7 +103,8 @@ export const ParteDoMeio = styled.div`
 `
 
 export const LugarBotao = styled.div`
-    margin-left: 70vw;
+    margin-left: 55vw;
+    padding-bottom: 15vh;
 `
 
 export const Select = styled.select`

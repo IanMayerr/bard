@@ -31,8 +31,10 @@ function Perfil() {
             local: local === "" ? dataUser.local : local,
             biografia: biografia === "" ? dataUser.biografia : biografia,
         }
+
         console.log(data);
         alert(JSON.stringify(data))
+        
         const response = await axios.put(`http://localhost:3005/api/updatePerfil/${userId}`, data);
 
         if (response.data.success) {
@@ -41,14 +43,6 @@ function Perfil() {
         } else {
             alert("Deu um erro ao alterar as informações. Tente de novo mais tarde.");
         }
-        // chamar rota da api para cadastrar perfil
-        // const response = axios.post('URL/perfil/create', data);
-
-        // if (response.data.success) {
-        //     alert('Deucerto')
-        // } else {
-        //     alert("Nao deu certo");
-        // }
     };
 
     const fetchData = async () => {
