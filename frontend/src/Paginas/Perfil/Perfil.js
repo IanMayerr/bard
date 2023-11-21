@@ -1,5 +1,5 @@
 import setaVoltar from "../../assets/setaVoltar.svg"
-import { Banner, Nome, Arroba, Cidade, Fundo, ParteDeCima, Img, Status, ParteDoMeio, Biografia, TextoBiografia, Img2, LugarBotao, PlanoDeFundo, Select } from "./Perfil.jsx"
+import { Banner, Nome, Arroba, Cidade, Fundo, ParteDeCima, Img, Status, ParteDoMeio, Biografia, TextoBiografia, Img2, LugarBotao, PlanoDeFundo, Select, Resto } from "./Perfil.jsx"
 import fotoPerfil from "../../assets/fotoPerfil.svg"
 import iconeLocalizacao from "../../assets/iconeLocalizacao.svg"
 import Card from "../../components/Card/Card.js"
@@ -163,6 +163,7 @@ function Perfil() {
                     </ParteDoMeio>
 
                     <Card />
+                    <Resto />
                 </Fundo>
             </PlanoDeFundo>
         </>

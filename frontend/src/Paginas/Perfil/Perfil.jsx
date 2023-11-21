@@ -5,7 +5,12 @@ export const Banner = styled.div`
     background-image: url(${fundoPerfil});
     height: 15vh;
     width: 100vw;
-    padding-top: 5vh;
+    padding-top: 8vh;
+
+    img {
+        position: absolute;
+        
+    }
 `
 
 export const PlanoDeFundo = styled.div`
@@ -104,7 +109,7 @@ export const ParteDoMeio = styled.div`
 
 export const LugarBotao = styled.div`
     margin-left: 55vw;
-    padding-bottom: 15vh;
+    position: absolute;
 `
 
 export const Select = styled.select`
@@ -113,4 +118,9 @@ export const Select = styled.select`
     width: 70vw;
     border: 1px solid gray;
     width: 57vw;
+`
+
+export const Resto = styled.div`
+    background-color: #4D4C7D;
+    height: 17vh;
 `
